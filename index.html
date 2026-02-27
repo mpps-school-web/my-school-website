@@ -3,70 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maharana Pratap Sr. Sec. School</title>
-</head>
-<body style="background-color: #f4f4f4; font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0;">
+    <title>Maharana Pratap Public School | Mobile Friendly</title>
+    
+    <style>
+        /* Global Settings */
+        * { box-sizing: border-box; } /* Isse padding box ke andar hi rehti hai */
+        
+        body { margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; background-color: #f9f9f9; color: #333; overflow-x: hidden; }
+        
+        /* Header: Wahi purana color aur style */
+        header { background-color: #8a7a70; color: white; padding: 40px 20px; text-align: center; }
+        
+        /* Navigation: Sticky rakha hai taaki hile nahi */
+        nav { background-color: white; padding: 15px; border-bottom: 2px solid #eee; position: sticky; top: 0; z-index: 1000; text-align: center; }
+        nav a { color: #2c3e50; text-decoration: none; margin: 0 10px; font-weight: bold; transition: 0.3s; display: inline-block; }
+        nav a:hover { color: #e74c3c; }
 
-    <header style="background-color: #8a7a70; color: white; padding: 30px; text-align: center;">
-        <h1 style="margin: 0; letter-spacing: 1px;">MAHARANA PRATAP PUBLIC SR. SEC. SCHOOL</h1>
-        <p style="margin: 5px 0 0 0; font-style: italic; opacity: 0.9;">"Knowledge is Power"</p>
+        /* Hero: Responsive Banner */
+        .hero { background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('/static/school.jpg') center/cover; color: white; padding: 80px 20px; text-align: center; }
+        
+        /* CONTAINER: Pehle ye 1100px fixed tha, ab humne width: 95% joda hai taaki mobile par adjust ho sake */
+        .container { width: 95%; max-width: 1100px; margin: auto; padding: 40px 10px; }
+
+        .btn-apply { background: #e74c3c; color: white; padding: 15px 35px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block; margin-top: 20px; box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4); }
+
+        /* Principal & Developer Card: flex-wrap: wrap joda hai taaki mobile par photo upar aur text niche aa jaye */
+        .principal-card, .dev-card { 
+            background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+            display: flex; align-items: center; gap: 30px; 
+            flex-wrap: wrap; /* <--- YE SABSE ZAROORI HAI MOBILE KE LIYE */
+            justify-content: center;
+        }
+        
+        .principal-card { border-left: 10px solid #2c3e50; }
+        .dev-card { border-top: 5px solid #e74c3c; margin-top: 50px; }
+
+        .principal-img, .dev-img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 5px solid #f0f0f0; }
+
+        /* Text area ko flex-grow diya taaki wo bachi hui jagah le le */
+        .text-box { flex: 1; min-width: 300px; }
+
+        .underline { width: 60px; height: 4px; background: #e74c3c; margin: 10px auto; border-radius: 2px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 style="margin: 0; font-size: clamp(1.5rem, 5vw, 2.5rem); text-transform: uppercase;">Maharana Pratap Public School</h1>
+        <p style="margin: 10px 0 0 0; font-style: italic;">"Knowledge is Power"</p>
     </header>
 
-    <nav style="background-color: white; padding: 15px; border-bottom: 2px solid #ddd; text-align: center;">
-        <b style="font-size: 17px;">
-            <a href="index.html" style="color: #e74c3c; text-decoration: none; margin: 0 15px;">Home</a> | 
-            <a href="about.html" style="color: #2c3e50; text-decoration: none; margin: 0 15px;">About Us</a> |
-            <a href="gallery.html" style="color: #2c3e50; text-decoration: none; margin: 0 15px;">Gallery</a> |
-            <a href="contact.html" style="color: #2c3e50; text-decoration: none; margin: 0 15px;">Contact Us</a>
-        </b>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/contact">Contact Us</a>
     </nav>
 
-    <marquee behavior="scroll" direction="left" style="background: #e74c3c; color: white; padding: 10px; font-weight: bold;">
-        ?? Admission Open for Session 2026-27 | ?? Sports Week starting from next Monday! | ?? Maharana Pratap School wins Gold Medal in State Level Debate.
+    <marquee style="background: #e74c3c; color: white; padding: 10px; font-weight: bold;">
+        📢 Admission Open for Session 2026-27 | 🥇 MPSS wins Gold Medal in State Level Debate.
     </marquee>
 
-    <main>
-        
-        <section style="background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://www.transparenttextures.com/patterns/cubes.png'); color: white; padding: 100px 20px; text-align: center;">
-            <h2 style="font-size: 40px; margin-bottom: 10px;">Empowering Minds, Inspiring Futures</h2>
-            <p style="font-size: 20px; opacity: 0.9; max-width: 700px; margin: auto;">
-                Shaping the leaders of tomorrow with quality education and moral values.
-            </p>
-            <br><br>
-            <a href="contact.html" style="background: #e74c3c; color: white; padding: 15px 40px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">Apply for Admission 2026</a>
+    <section class="hero">
+        <h2 style="font-size: clamp(1.8rem, 6vw, 2.8rem);">Empowering Minds, Inspiring Futures</h2>
+        <a href="/contact" class="btn-apply">Apply for Admission 2026</a>
+    </section>
+
+    <div class="container">
+        <div style="text-align: center; margin-bottom: 40px;">
+            <h2 style="color: #2c3e50;">Welcome to Our School</h2>
+            <div class="underline"></div>
+            <p style="max-width: 800px; margin: 20px auto; line-height: 1.6;">Shri Dungargarh ka pratishthit shiksha kendra.</p>
+        </div>
+
+        <section class="principal-card">
+            <img src="/static/student.jpg" alt="Principal" class="principal-img">
+            <div class="text-box">
+                <h3 style="color: #e74c3c;">Principal's Message</h3>
+                <p style="font-style: italic;">"Hum har bache ka sarvangeen vikas karne mein vishwas rakhte hain."</p>
+                <strong>— Principal, MPSS</strong>
+            </div>
         </section>
 
-        <div style="max-width: 1000px; margin: auto; padding: 40px 20px;">
-            
-            <section style="text-align: center; margin-bottom: 50px;">
-                <h2 style="color: #2c3e50; font-size: 30px;">Welcome to Our School</h2>
-                <div style="width: 50px; height: 3px; background: #e74c3c; margin: 10px auto;"></div>
-                <p style="font-size: 18px; color: #555; line-height: 1.6;">
-                    Maharana Pratap Public School Sridungargarh ka ek pratishthit shiksha kendra hai. 
-                    Hum pichle kai varshon se bacho ko uchh-stariya shiksha pradan kar rahe hain.
-                </p>
-            </section>
+        <section class="dev-card">
+            <div style="text-align: center;">
+                <img src="/static/jamil.jpg" alt="Mohammad Jamil" class="dev-img">
+                <h3 style="margin: 10px 0 0 0; color: #e74c3c;">Mohammad Jamil</h3>
+                <p style="margin: 0; font-weight: bold; color: #7f8c8d;">ICT Head & Developer</p>
+            </div>
+            <div class="text-box" style="text-align: center;">
+                <p>"Technology is a powerful tool for education. This website is a small step towards that digital mission."</p>
+                <a href="tel:8094401473" style="background: #2c3e50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">📞 Call: 8094401473</a>
+            </div>
+        </section>
+    </div>
 
-            <section style="background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-left: 8px solid #2c3e50;">
-                <h3 style="color: #e74c3c; margin-top: 0;">Principal's Message</h3>
-                <p style="line-height: 1.8; color: #444; font-size: 17px; font-style: italic;">
-                    "Humara lakshya na sirf kitabi gyan dena hai, balki bacho ko ek zimmedar nagrik banana hai. 
-                    Hum har bache ki chupi hui pratibha (talent) ko nikharne mein vishwas rakhte hain."
-                </p>
-                <p style="text-align: right; font-weight: bold; color: #2c3e50;">- Principal, MPSS</p>
-            </section>
+    <div style="text-align: center; margin: 20px auto; background: #2c3e50; color: white; padding: 15px; border-radius: 10px; max-width: 250px;">
+        <p style="margin:0; font-size: 12px; opacity: 0.8;">TOTAL VISITORS</p>
+        <h2 id="count" style="margin: 5px 0; color: #e74c3c;">1,248</h2>
+        <p style="margin:0; font-size: 10px;">🟢 Live Active</p>
+    </div>
 
-        </div>
-    </main>
-
-    <footer style="background-color: #2c3e50; color: white; padding: 40px 20px; text-align: center;">
-        <p style="margin: 0; font-size: 18px;">&copy; 2026 Maharana Pratap Sr. Sec. School. All Rights Reserved.</p>
-        <p style="margin: 15px 0 0 0; font-size: 14px; opacity: 0.7; line-height: 1.6;">
-            ?? Address: Kalu Bass, Near Terapanth Bhawan (Uparlo), Sridungargarh <br>
-            ?? Phone: +91 80944-01473 | ?? Email: info@mpss.com
-        </p>
+    <footer style="background: #2c3e50; color: white; text-align: center; padding: 30px; border-top: 3px solid #e74c3c;">
+        <p>&copy; 2026 Maharana Pratap Public School. All Rights Reserved.</p>
     </footer>
 
+    <script>
+        let count = 1248;
+        setInterval(() => {
+            count += Math.floor(Math.random() * 3);
+            document.getElementById('count').innerText = count.toLocaleString();
+        }, 5000);
+    </script>
 </body>
 </html>
-
