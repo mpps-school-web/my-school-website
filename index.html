@@ -6,23 +6,28 @@
     <title>Maharana Pratap Public School | Mobile Friendly</title>
     
     <style>
-        /* Global Settings */
+        /* Global Settings: Sabhi elements ke liye basic settings */
         * { box-sizing: border-box; }
         
         body { margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; background-color: #f9f9f9; color: #333; overflow-x: hidden; }
         
+        /* Header: Top ka hissa jahan school ka naam hai */
         header { background-color: #8a7a70; color: white; padding: 40px 20px; text-align: center; }
         
+        /* Navigation: Menu bar jo screen par chipka (sticky) rehta hai */
         nav { background-color: white; padding: 15px; border-bottom: 2px solid #eee; position: sticky; top: 0; z-index: 1000; text-align: center; }
         nav a { color: #2c3e50; text-decoration: none; margin: 0 10px; font-weight: bold; transition: 0.3s; display: inline-block; }
         nav a:hover { color: #e74c3c; }
 
+        /* Hero Section: Banner image aur admission button */
         .hero { background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('/static/school.jpg') center/cover; color: white; padding: 80px 20px; text-align: center; }
         
+        /* Container: Content ko screen ke beech mein rakhne ke liye */
         .container { width: 95%; max-width: 1100px; margin: auto; padding: 40px 10px; }
 
         .btn-apply { background: #e74c3c; color: white; padding: 15px 35px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block; margin-top: 20px; box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4); }
 
+        /* Cards Style: Principal aur Developer dono cards ka base design */
         .principal-card, .dev-card { 
             background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
             display: flex; align-items: center; gap: 30px; 
@@ -32,17 +37,16 @@
         
         .principal-card { border-left: 10px solid #2c3e50; }
         
-        /* Developer Card ko thoda chhota aur alag dikhane ke liye */
+        /* Meet The Architect Card: Iska size thoda chhota rakha hai */
         .dev-card { 
             border-top: 5px solid #e74c3c; 
             margin: 50px auto 0 auto; 
-            max-width: 850px; /* Isse box zyada lamba nahi dikhega */
+            max-width: 850px; 
             padding: 20px; 
         }
 
         .principal-img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 5px solid #f0f0f0; }
         
-        /* Dev Photo ko thoda chhota kiya (150px) */
         .dev-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 5px solid #fdfdfd; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 
         .text-box { flex: 1; min-width: 300px; }
@@ -74,6 +78,7 @@
     </section>
 
     <div class="container">
+        
         <div style="text-align: center; margin-bottom: 40px;">
             <h2 style="color: #2c3e50;">Welcome to Our School</h2>
             <div class="underline"></div>
@@ -123,7 +128,7 @@
     <script>
         let count = 1248;
         setInterval(() => {
-            count += Math.floor(Math.random() * 3);
+            count += Math.floor(Math.random() * 3); // Randomly increase count
             document.getElementById('count').innerText = count.toLocaleString();
         }, 5000);
     </script>
