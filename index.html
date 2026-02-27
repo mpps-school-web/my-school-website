@@ -7,40 +7,44 @@
     
     <style>
         /* Global Settings */
-        * { box-sizing: border-box; } /* Isse padding box ke andar hi rehti hai */
+        * { box-sizing: border-box; }
         
         body { margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; background-color: #f9f9f9; color: #333; overflow-x: hidden; }
         
-        /* Header: Wahi purana color aur style */
         header { background-color: #8a7a70; color: white; padding: 40px 20px; text-align: center; }
         
-        /* Navigation: Sticky rakha hai taaki hile nahi */
         nav { background-color: white; padding: 15px; border-bottom: 2px solid #eee; position: sticky; top: 0; z-index: 1000; text-align: center; }
         nav a { color: #2c3e50; text-decoration: none; margin: 0 10px; font-weight: bold; transition: 0.3s; display: inline-block; }
         nav a:hover { color: #e74c3c; }
 
-        /* Hero: Responsive Banner */
         .hero { background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('/static/school.jpg') center/cover; color: white; padding: 80px 20px; text-align: center; }
         
-        /* CONTAINER: Pehle ye 1100px fixed tha, ab humne width: 95% joda hai taaki mobile par adjust ho sake */
         .container { width: 95%; max-width: 1100px; margin: auto; padding: 40px 10px; }
 
         .btn-apply { background: #e74c3c; color: white; padding: 15px 35px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block; margin-top: 20px; box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4); }
 
-        /* Principal & Developer Card: flex-wrap: wrap joda hai taaki mobile par photo upar aur text niche aa jaye */
         .principal-card, .dev-card { 
             background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
             display: flex; align-items: center; gap: 30px; 
-            flex-wrap: wrap; /* <--- YE SABSE ZAROORI HAI MOBILE KE LIYE */
+            flex-wrap: wrap; 
             justify-content: center;
         }
         
         .principal-card { border-left: 10px solid #2c3e50; }
-        .dev-card { border-top: 5px solid #e74c3c; margin-top: 50px; }
+        
+        /* Developer Card ko thoda chhota aur alag dikhane ke liye */
+        .dev-card { 
+            border-top: 5px solid #e74c3c; 
+            margin: 50px auto 0 auto; 
+            max-width: 850px; /* Isse box zyada lamba nahi dikhega */
+            padding: 20px; 
+        }
 
-        .principal-img, .dev-img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 5px solid #f0f0f0; }
+        .principal-img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 5px solid #f0f0f0; }
+        
+        /* Dev Photo ko thoda chhota kiya (150px) */
+        .dev-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 5px solid #fdfdfd; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 
-        /* Text area ko flex-grow diya taaki wo bachi hui jagah le le */
         .text-box { flex: 1; min-width: 300px; }
 
         .underline { width: 60px; height: 4px; background: #e74c3c; margin: 10px auto; border-radius: 2px; }
@@ -86,14 +90,22 @@
         </section>
 
         <section class="dev-card">
-            <div style="text-align: center;">
-                <img src="/static/jamil.jpg" alt="Mohammad Jamil" class="dev-img">
-                <h3 style="margin: 10px 0 0 0; color: #e74c3c;">Mohammad Jamil</h3>
-                <p style="margin: 0; font-weight: bold; color: #7f8c8d;">ICT Head & Developer</p>
+            <div style="text-align: center; border-bottom: 1px solid #eee; width: 100%; padding-bottom: 10px; margin-bottom: 20px;">
+                <h4 style="margin: 0; color: #2c3e50; font-size: 18px; text-transform: uppercase; letter-spacing: 1px;">Meet The Architect</h4>
+                <div style="width: 30px; height: 2px; background: #e74c3c; margin: 5px auto;"></div>
             </div>
-            <div class="text-box" style="text-align: center;">
-                <p>"Technology is a powerful tool for education. This website is a small step towards that digital mission."</p>
-                <a href="tel:8094401473" style="background: #2c3e50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">📞 Call: 8094401473</a>
+
+            <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 20px; justify-content: center;">
+                <div style="text-align: center;">
+                    <img src="/static/jamil.jpg" alt="Mohammad Jamil" class="dev-img">
+                    <h3 style="margin: 10px 0 0 0; color: #e74c3c; font-size: 20px;">Mohammad Jamil</h3>
+                    <p style="margin: 0; font-size: 14px; font-weight: bold; color: #7f8c8d;">ICT Head & Developer</p>
+                </div>
+                
+                <div class="text-box" style="text-align: center; max-width: 400px;">
+                    <p style="font-size: 15px; line-height: 1.5; color: #555; font-style: italic;">"Technology is a powerful tool for education. This website is a small step towards that digital mission."</p>
+                    <a href="tel:8094401473" style="background: #2c3e50; color: white; padding: 8px 15px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 14px; display: inline-block; margin-top: 10px;">📞 Call: 8094401473</a>
+                </div>
             </div>
         </section>
     </div>
