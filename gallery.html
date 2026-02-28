@@ -1,32 +1,164 @@
-<nav style="background-color: white; padding: 15px; border-bottom: 2px solid #ddd;" align="center">
-        <b>
-            <a href="index.html" style="color: #333; text-decoration: none; margin: 0 15px;">Home</a> | 
-            <a href="gallery.html" style="color: red; text-decoration: none; margin: 0 15px;">Gallery</a>
-        </b>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Maharana Pratap Public School</title>
+
+    <style>
+        /* 1. Basic Setup */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: #f4f7f6; color: #333; }
+
+        /* 2. Navigation Bar */
+        nav {
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            list-style: none;
+        }
+        .nav-container a {
+            text-decoration: none;
+            color: #1a365d;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+        .nav-container a:hover { color: #e74c3c; }
+        .nav-container .active { color: #e74c3c; border-bottom: 2px solid #e74c3c; }
+
+        /* 3. Header Section */
+        .gallery-header {
+            text-align: center;
+            padding: 60px 20px;
+            background: white;
+        }
+        .gallery-header h1 { font-size: 2.5rem; color: #1a365d; margin-bottom: 10px; }
+        .underline { width: 60px; height: 4px; background: #e74c3c; margin: auto; border-radius: 10px; }
+
+        /* 4. Professional Gallery Grid */
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .photo-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.4s;
+            border: 1px solid #eee;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .photo-card img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .photo-card:hover img { transform: scale(1.1); }
+
+        .photo-info { padding: 15px; text-align: center; }
+        .photo-info h4 { color: #1a365d; margin: 0; font-size: 1.1rem; }
+        .photo-info p { color: #e74c3c; font-size: 0.8rem; font-weight: bold; margin-top: 5px; text-transform: uppercase; }
+
+        /* 5. Footer */
+        footer { text-align: center; padding: 40px; background: #1a365d; color: white; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul class="nav-container">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/gallery" class="active">Gallery</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+        </ul>
     </nav>
-<main style="max-width: 1000px; margin: auto; padding: 20px;">
-    
-    <h2 align="center" style="color: #2c3e50;">School Photo Gallery</h2>
-    <hr style="width: 50px; border: 2px solid red;">
 
-    <section style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px;">
-        
-        <div style="background: white; padding: 10px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 280px;">
-            <img src="student.jpg" alt="Science Lab" style="width: 100%; border-radius: 5px;">
-            <p align="center"><b>Science Lab</b></p>
+    <header class="gallery-header">
+        <h1>School Life Gallery</h1>
+        <div class="underline"></div>
+        <p style="margin-top: 15px; color: #666;">Shri Dungargarh ke pratishthit shiksha kendra ki yaadein</p>
+    </header>
+
+    <div class="container">
+        <div class="gallery-grid">
+
+            <div class="photo-card">
+                <img src="/static/school.jpg" alt="School Building">
+                <div class="photo-info">
+                    <h4>Main Building</h4>
+                    <p>Digital Campus</p>
+                </div>
+            </div>
+
+            <div class="photo-card">
+                <img src="/static/sports.jpg" alt="Sports">
+                <div class="photo-info">
+                    <h4>Sports Activities</h4>
+                    <p>Health & Fitness</p>
+                </div>
+            </div>
+
+            <div class="photo-card">
+                <img src="/static/photo1.jpg" alt="Students">
+                <div class="photo-info">
+                    <h4>Future Leaders</h4>
+                    <p>Academic Excellence</p>
+                </div>
+            </div>
+
+            <div class="photo-card">
+                <img src="/static/photo2.jpg" alt="Events">
+                <div class="photo-info">
+                    <h4> farewell party </h4>
+                    <p>Cultural Programs</p>
+                </div>
+            </div>
+
+            <div class="photo-card">
+                <img src="/static/class.jpg" alt="Classroom">
+                <div class="photo-info">
+                    <h4>Smart Classroom</h4>
+                    <p>Modern Education</p>
+                </div>
+            </div>
+
+            <div class="photo-card">
+                <img src="/static/paint.jpg" alt="Painting">
+                <div class="photo-info">
+                    <h4>Creative Arts</h4>
+                    <p>Painting Exhibition</p>
+                </div>
+            </div>
+
         </div>
+    </div>
 
-        <div style="background: white; padding: 10px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 280px;">
-            <img src="class.jpg" alt="Library" style="width: 100%; border-radius: 5px;">
-            <p align="center"><b>Digital Library</b></p>
-        </div>
+    <footer>
+        <p>&copy; 2026 Maharana Pratap Public School. All Rights Reserved.</p>
+    </footer>
 
-        <div style="background: white; padding: 10px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 280px;">
-            <img src="sports.jpg" alt="Playground" style="width: 100%; border-radius: 5px;">
-            <p align="center"><b>Sports Day</b></p>
-        </div>
-
-    </section>
-
-
-</main>
+</body>
+</html>
