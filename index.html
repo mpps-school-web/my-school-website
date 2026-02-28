@@ -4,37 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maharana Pratap Public School | Official</title>
-    
+
     <style>
         /* 1. Basic Setup */
         * { box-sizing: border-box; margin: 0; padding: 0; transition: 0.3s; }
         body { font-family: 'Segoe UI', Roboto, sans-serif; background-color: #f4f4f4; color: #222; line-height: 1.6; }
 
-        /* 2. Top Bar (Blue & Gold Look) */
-        .top-header { background: #1e3a8a; color: white; padding: 15px; text-align: center; border-bottom: 4px solid 
-
-#facc15; }
+        /* 2. Top Bar */
+        .top-header { background: #1e3a8a; color: white; padding: 15px; text-align: center; border-bottom: 4px solid #facc15; }
         .top-header h1 { font-size: 2.2rem; text-transform: uppercase; letter-spacing: 2px; }
 
         /* 3. Navigation */
-        nav { background: white; padding: 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba
-
-(0,0,0,0.1); }
+        nav { background: white; padding: 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         .nav-container { display: flex; justify-content: center; list-style: none; }
-        nav a { padding: 18px 25px; display: block; color: #333; text-decoration: none; font-weight: 600; text-transform: 
-
-uppercase; font-size: 14px; }
+        nav a { padding: 18px 25px; display: block; color: #333; text-decoration: none; font-weight: 600; text-transform: uppercase; font-size: 14px; }
         nav a:hover { background: #1e3a8a; color: white; }
 
         /* 4. Hero Section */
-        .hero { 
-            background: linear-gradient(rgba(30, 58, 138, 0.7), rgba(30, 58, 138, 0.7)), url('school.jpg') center/cover; 
-            height: 400px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; 
-
-text-align: center;
+        .hero {
+            background: linear-gradient(rgba(30, 58, 138, 0.7), rgba(30, 58, 138, 0.7)), url('/static/school.jpg') center/cover;
+            height: 400px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;
         }
-        .btn-main { 
-            background: #facc15; color: #1e3a8a; padding: 15px 40px; text-decoration: none; 
+        .btn-main {
+            background: #facc15; color: #1e3a8a; padding: 15px 40px; text-decoration: none;
             font-weight: 800; border-radius: 5px; margin-top: 20px; font-size: 1.1rem;
             box-shadow: 0 4px 0 #ca8a04;
         }
@@ -45,39 +37,48 @@ text-align: center;
 
         .section-title { text-align: center; margin-bottom: 40px; position: relative; }
         .section-title h2 { font-size: 2rem; color: #1e3a8a; display: inline-block; padding-bottom: 10px; }
-        .section-title::after { content: ''; width: 80px; height: 4px; background: #facc15; position: absolute; bottom: -
+        .section-title::after { content: ''; width: 80px; height: 4px; background: #facc15; position: absolute; bottom: -5px; left: 50%; transform: translateX(-50%); }
 
-5px; left: 50%; transform: translateX(-50%); }
-
-        /* 6. Professional Cards */
-        .info-card { 
-            background: white; border-radius: 10px; overflow: hidden; display: flex; 
+        /* 6. Info Card */
+        .info-card {
+            background: white; border-radius: 10px; overflow: hidden; display: flex;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 40px; border: 1px solid #ddd;
         }
         .info-card img { width: 300px; height: 300px; object-fit: cover; }
         .info-content { padding: 40px; flex: 1; }
         .info-content h3 { color: #1e3a8a; font-size: 1.5rem; margin-bottom: 15px; }
 
-        /* 7. Developer Badge (Sleek Style) */
-        .dev-section { background: #e5e7eb; padding: 30px; border-radius: 10px; display: flex; align-items: center; gap: 
+        /* 7. Result Box Styling */
+        .result-box {
+            background: white; padding: 30px; border-radius: 15px; border-top: 5px solid #facc15;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin: 40px 0; text-align: center;
+        }
+        .result-input { padding: 12px; width: 250px; border: 2px solid #ddd; border-radius: 5px; font-size: 16px; margin-bottom: 10px; }
+        .btn-search { background: #1e3a8a; color: white; padding: 12px 30px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
 
-20px; margin-top: 60px; border-left: 10px solid #1e3a8a; }
-        .dev-img { width: 100px; height: 100px; border-radius: 10px; border: 3px solid white; box-shadow: 0 2px 10px 
+        /* Dynamic Result Display */
+        .result-display {
+            margin-top: 20px; padding: 20px; border-radius: 10px; text-align: left; max-width: 450px; margin-left: auto; margin-right: auto;
+            border: 2px solid #facc15; background: #fffdf0;
+        }
+        .hold-box { border: 2px solid #ef4444; background: #fef2f2; }
+        .hold-text { color: #b91c1c; font-weight: bold; text-align: center; padding: 10px; border: 1px dashed #ef4444; margin-top: 10px; border-radius: 5px; }
 
-rgba(0,0,0,0.1); }
-        
-        /* 8. Footer & Counter */
+        /* 8. Developer Badge */
+        .dev-section { background: #e5e7eb; padding: 30px; border-radius: 10px; display: flex; align-items: center; gap: 20px; margin-top: 60px; border-left: 10px solid #1e3a8a; }
+        .dev-img { width: 100px; height: 100px; border-radius: 10px; border: 3px solid white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+
+        /* 9. Footer */
         footer { background: #111; color: #ccc; padding: 40px 20px; text-align: center; margin-top: 50px; }
-        .visitor-badge { background: #1e3a8a; color: #facc15; display: inline-block; padding: 10px 25px; border-radius: 
+        .visitor-badge { background: #1e3a8a; color: #facc15; display: inline-block; padding: 10px 25px; border-radius: 50px; font-weight: bold; margin-bottom: 20px; font-size: 1.2rem; }
 
-50px; font-weight: bold; margin-bottom: 20px; font-size: 1.2rem; }
-
-        /* Mobile Responsive */
+        /* Responsive */
         @media (max-width: 768px) {
             .info-card { flex-direction: column; }
             .info-card img { width: 100%; height: 250px; }
             .nav-container { flex-wrap: wrap; }
             nav a { padding: 10px 15px; font-size: 12px; }
+            .result-input { width: 100%; }
         }
     </style>
 </head>
@@ -89,18 +90,19 @@ rgba(0,0,0,0.1); }
 
     <nav>
         <div class="nav-container">
-            <a href="#">Home</a>
-            <a href="#">About Us</a>
-            <a href="#">Academic</a>
-            <a href="#">Gallery</a>
-            <a href="#">Contact</a>
+            <a href="/">Home</a>
+            <a href="/about">About Us</a>
+            <a href="/academic">Academic</a>
+            <a href="/gallery">Gallery</a>
+            <a href="/contact">Contact</a>
         </div>
     </nav>
 
     <section class="hero">
         <h2 style="font-size: 2.5rem;">Educating for Excellence</h2>
         <p style="font-size: 1.2rem; opacity: 0.9;">Leading the way in Shri Dungargarh</p>
-        <a href="#" class="btn-main">Admission 2026-27</a>
+        
+        <a href="/contact" class="btn-main">Admission 2026-27</a>
     </section>
 
     <div class="container">
@@ -109,25 +111,53 @@ rgba(0,0,0,0.1); }
         </div>
 
         <div class="info-card">
-            <img src="student.jpg" alt="Principal">
+            <img src="/static/student.jpg" alt="Principal">
             <div class="info-content">
                 <h3>Principal's Message</h3>
-                <p>"Humare school ka maksad sirf kitabi gyan dena nahi, balki bacho ke charitra aur unki soch ko behtar 
-
-banana hai."</p>
+                <p>"Humare school ka maksad sirf kitabi gyan dena nahi, balki bacho ke charitra aur unki soch ko behtar banana hai."</p>
                 <p style="margin-top: 20px; font-weight: bold; color: #1e3a8a;">— Principal, MPSS</p>
             </div>
         </div>
 
+        <div class="result-box" id="result-target">
+            <h3 style="color: #1e3a8a; margin-bottom: 15px;">🔍 Examination Result 2026</h3>
+            <p style="margin-bottom: 20px; color: #666;">Apna Roll Number niche daal kar result check karein.</p>
+
+            <form action="/get_result" method="POST">
+                <input type="text" name="roll_no" class="result-input" placeholder="Roll No. (e.g. 101)" required>
+                <button type="submit" class="btn-search">View Result</button>
+            </form>
+
+            {% if result %}
+                <div class="result-display {% if result.status == 'hold' %}hold-box{% endif %}">
+                    <h4 style="color: #1e3a8a; border-bottom: 1px solid #ddd; padding-bottom: 5px; margin-bottom: 10px;">Student Details:</h4>
+                    <p><strong>Name:</strong> {{ result.name }}</p>
+
+                    {% if result.status == 'hold' %}
+                        <div class="hold-text">
+                            ⚠️ Aapka result rok diya gaya hai. <br>
+                            Kripya school office mein sampark karein.
+                        </div>
+                    {% else %}
+                        <p><strong>Class:</strong> {{ result.class }}</p>
+                        <p><strong>Marks:</strong> {{ result.marks }}</p>
+                        <p><strong>Status:</strong> <span style="color: green; font-weight: bold;">Pass</span></p>
+                    {% endif %}
+                </div>
+            {% elif roll_no %}
+                <p style="color: red; margin-top: 15px; font-weight: bold;">Roll No. {{ roll_no }} nahi mila!</p>
+            {% endif %}
+        </div>
+
         <div class="dev-section">
-            <img src="jamil.jpg" alt="Mohammad Jamil" class="dev-img">
+            <img src="/static/jamil.jpg" alt="Mohammad Jamil" class="dev-img">
             <div>
                 <h4 style="color: #1e3a8a; font-size: 1.2rem;">Mohammad Jamil</h4>
                 <p style="color: #666; font-size: 0.9rem; font-weight: bold;">ICT Head & Web Developer</p>
                 <p style="font-style: italic; margin-top: 5px;">"Designed with ❤️ for Digital MPSS Mission."</p>
-                <a href="tel:8094401473" style="color: #1e3a8a; font-weight: bold; text-decoration: none; font-size: 
-
-0.8rem;">[ Call Developer ]</a>
+                <a href="tel:8094401473" style="color: #1e3a8a; font-weight: bold; text-decoration: none; font-size: 0.9rem; display: block; margin-top: 5px;">
+                    📞 Call: +91 8094401473
+                </a>
             </div>
         </div>
     </div>
@@ -140,11 +170,17 @@ banana hai."</p>
     </footer>
 
     <script>
+        // Visitor Counter
         let count = 1268;
         setInterval(() => {
             count += 1;
             document.getElementById('count').innerText = count.toLocaleString();
         }, 4000);
+
+        // Result dekhne par auto-scroll niche ki taraf
+        {% if result or roll_no %}
+            document.getElementById('result-target').scrollIntoView({ behavior: 'smooth' });
+        {% endif %}
     </script>
 </body>
 </html>
